@@ -29,9 +29,6 @@ it('has 3 inputs and 2 buttons', () => {
 it('change password success', () => {
   const wrapper = mount(<ChangePassword {...props} />);
   const changePasswordFunc = jest.spyOn(authServices, 'changePassword').mockImplementation(() => Promise.resolve({ data: { code: 200, message: 'Thanh cong' } }));
-  // wrapper.find('input#username').simulate('change', { target: { value: props.initFormParams.username } })
-  // wrapper.find('input#password').simulate('change', { target: { value: props.initFormParams.password } })
-  // wrapper.find('input#newpassword').simulate('change', { target: { value: props.initFormParams.newpassword } })
   wrapper.find('button#change-passw-btn').simulate('click')
   expect(changePasswordFunc).toHaveBeenCalledWith(
     props.initFormParams

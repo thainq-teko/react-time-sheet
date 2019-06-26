@@ -9,16 +9,16 @@ import ChangePass from './components/ChangePassword/ChangePassword'
 import ForgotPass from './components/ForgotPassword/ForgotPassword'
 
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
-import { clearAuth } from 'helpers/clearAuth'
+import { AuthHelpers } from 'helpers'
 
-clearAuth();
+AuthHelpers.clearAuth();
 
 const App = () => {
   return (
     <div className="App">
       <Container>
         <Row>
-          <Col md='12'>
+          <Col md="12">
             <Router>
               <Switch>
                 <Route path="/home" component={Home} />

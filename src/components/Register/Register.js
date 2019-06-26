@@ -13,6 +13,7 @@ const Register = (props) => {
 
   const handleUsernameInput = (event) => {
     let input = event.target.value;
+    console.log(input)
     let regexTV = /^[ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$/
     let regexSpace = /\s+/g
     if (!input) {
@@ -24,6 +25,7 @@ const Register = (props) => {
       }
       else {
         setUsername(username => username = input)
+        console.log(username)
         setUsernameMessage(messageUsername => messageUsername = '')
       }
     }
@@ -100,7 +102,7 @@ const Register = (props) => {
     <div>
       <div>
         <label htmlFor="">Username</label>
-        <input type="text" autoFocus autoComplete="off" name="username" value={username} onChange={(event) => handleUsernameInput(event)} />
+        <input type="text" autoFocus autoComplete="off" name="username" value={username} onChange={event => handleUsernameInput(event)} />
         <br />
         <pre>
           {messageUsername && <b>{messageUsername}</b>}
@@ -109,7 +111,7 @@ const Register = (props) => {
 
       <div>
         <label htmlFor="">Password</label>
-        <input type="password" autoComplete="off" name="password" value={password} onChange={(event) => handlePasswordInput(event)} />
+        <input type="password" autoComplete="off" name="password" value={password} onChange={event => handlePasswordInput(event)} />
         <br />
         <pre>
           {messagePassword && <b>{messagePassword}</b>}
@@ -118,7 +120,7 @@ const Register = (props) => {
 
       <div>
         <label htmlFor="">Email</label>
-        <input type="text" autoComplete="off" name="email" value={email} onChange={(event) => handleEmailInput(event)} onKeyPress={handlePress} />
+        <input type="text" autoComplete="off" name="email" value={email} onChange={event => handleEmailInput(event)} onKeyPress={handlePress} />
         <br />
         <pre>
           {emailMessage && <b>{emailMessage}</b>}

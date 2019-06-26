@@ -1,17 +1,18 @@
 import React, { useState } from 'reactn';
-import { isLogin } from 'helpers/auth'
+import { AuthHelpers } from 'helpers'
 import { authServices } from 'services'
 
 
 const ChangePass = props => {
+  if (!AuthHelpers.isLogin()) props.history.push('/login')
+
   const { initFormParams = {
     username: '',
     password: '',
     newpassword: ''
   } } = props;
-  if (!isLogin()) props.history.push('/login')
-  const [form, setFormInfo] = useState(initFormParams);
 
+  const [form, setFormInfo] = useState(initFormParams);
   const [res, resMessage] = useState('')
 
   const resetPass = async () => {

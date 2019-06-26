@@ -1,16 +1,16 @@
 
 import React, { useState, setGlobal } from 'reactn';
 // import { withRouter } from 'react-router'
-import { isLogin } from 'helpers/auth'
+import { AuthHelpers } from 'helpers'
 import { authServices } from 'services'
 
 const Login = (props) => {
   const { initFormParams = { username: '', password: '' } } = props;
-  if (isLogin())
+
+  if (AuthHelpers.isLogin())
     props.history.push('/home')
 
   const [form, setFormInfo] = useState(initFormParams);
-
   const [res, resMessage] = useState('')
 
   const handleLogin = async (event) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import { authServices } from 'services';
 import Home from './Home';
 
 const props = {

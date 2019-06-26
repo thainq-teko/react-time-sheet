@@ -7,8 +7,8 @@ const ForgotPass = props => {
         username: '',
         email: ''
       } } = props;
+      
     const [form, setFormInfo] = useState(initFormParams)
-
     const [res, resMessage] = useState('')
 
     const resetPass = async () => {

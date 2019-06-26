@@ -1,8 +1,8 @@
 import React, { useGlobal } from 'reactn';
-import { isLogin } from 'helpers/auth'
+import { AuthHelpers } from 'helpers'
 
 const Home = (props) => {
-  if (!isLogin()) props.history.push('/login')
+  if (!AuthHelpers.isLogin()) props.history.push('/login')
   const [username] = useGlobal('username');
 
   const handleLogout = () => {
